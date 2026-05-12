@@ -1,27 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição - Claudia Dib</title>
+    <title>Inscrição Evento - Claudia Dib</title>
     <style>
-        /* Estilos para garantir que o formulário ocupe a tela toda sem bordas */
+        /* Reset de estilos para ocupar a tela toda */
+        * {
+            box-sizing: border-box;
+        }
+        
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; 
-            background-color: #ffffff;
+            background-color: #f9f9f9; /* Um cinza bem claro para destacar o formulário */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Evita barra de rolagem dupla */
         }
 
-        .form-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        /* Container que centraliza o formulário e dá margem nas laterais */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
             height: 100%;
+            width: 100%;
+            padding: 10px; /* Margem de segurança para não colar nos cantos */
+        }
+
+        .form-wrapper {
+            width: 100%;
+            max-width: 800px; /* Largura máxima ideal para leitura */
+            height: 100%;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
 
         iframe {
@@ -29,18 +45,27 @@
             height: 100%;
             border: none;
         }
+
+        /* Ajuste para telas muito pequenas (celulares) */
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 5px; /* Margem menor em celulares */
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="form-container">
-        <iframe 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSck1hkM7ac6EPteqMdHSqNfBieWlKoh3eVb0YzokJ-agGgllQ/viewform?embedded=true" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Carregando…
-        </iframe>
+    <div class="main-container">
+        <div class="form-wrapper">
+            <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSck1hkM7ac6EPteqMdHSqNfBieWlKoh3eVb0YzokJ-agGgllQ/viewform?embedded=true" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0">
+                Carregando formulário...
+            </iframe>
+        </div>
     </div>
 
 </body>
